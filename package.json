@@ -1,0 +1,11 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/terrierscript/zenn-public",
+  "author": "terrierscript <13282103+terrierscript@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "zenn-cli": "^0.1.79"
+  }
+}
