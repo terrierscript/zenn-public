@@ -16,7 +16,7 @@ Chakra UIのTabsを利用した際、このタブ切り替えとURLを同期し�
 
 [^1]: `[[...path]]`については [この記事](https://zenn.dev/terrierscript/articles/2021-04-29-next-js-props-catch-all-routes)にまとめたので参照のこと
 
-```js
+```tsx
 /* /tabs/[[...path]].tsx */
 
 import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
