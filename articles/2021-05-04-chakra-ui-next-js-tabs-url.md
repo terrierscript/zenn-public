@@ -4,7 +4,7 @@ emoji: 🥘
 type: tech
 topics:
   - nextjs
-  - charaui
+  - chakraui
   - javascript
   - typescript
 published: true
