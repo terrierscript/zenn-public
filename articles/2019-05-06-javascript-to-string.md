@@ -76,3 +76,9 @@ MDNだと[浮動小数点数リテラル](https://developer.mozilla.org/ja/docs/
 ```js
 (10).toString(4)
 ```
+
+ナウい感じで行きたければOptional Chainingを使う手もあるだろう。全く意味の無いoptionalであるが、`..`よりは驚きが少なくタイプ数が少なくて済む
+
+```js
+10?.toString(4)
+```
