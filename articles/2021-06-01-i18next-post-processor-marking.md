@@ -1,5 +1,5 @@
 ---
-title: i18nextで処理済みのテキストをUI上で少しだけ見やすくする
+title: i18nextで処理済みのテキストをUI上で少しだけ見やすくするPostProcessorを仕掛ける
 emoji: 🐾
 type: tech
 topics:
