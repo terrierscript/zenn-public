@@ -1,6 +1,6 @@
 ---
 title: 配列のfilter()の型対応にtypesafe-utilsを使う
-emoji:🦦
+emoji: 🦦
 type: tech
 topics:
   - typescript
