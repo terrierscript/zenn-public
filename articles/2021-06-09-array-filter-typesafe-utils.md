@@ -63,7 +63,7 @@ const stringItems: string[] = items.filter(isString)
 ```
 
 これを避けるにはTypeGuardの関数を入念にテストするなどしかないだろう。
-
+実際filterを使うケースはnullを除外するなどがせいぜいと考えると、割に合わなくて面倒に感じるケースも多い。
 
 ### 解決策
 
@@ -80,4 +80,4 @@ const items = [1, 2, "foo", "baz"]
 const stringItems = items.filter(isString)
 ```
 
-もちろんあまり複雑なことをやるなら自前しなければならないが、せいぜいfilterでやることがnullを弾く程度の簡易なものであれば十分頼れるだろう
+もちろんあまり複雑なことをやるなら自前しなければならないが、せいぜいnull避け程度なら十分に価値を発揮してくれるはずだ
