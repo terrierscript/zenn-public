@@ -249,6 +249,30 @@ const RoundedOutlineButton = chakra(Button, {
 })
 ```
 
+また、型がうまく対応してないものの、下記のようにCSS以外のpropsも渡されているので`colorScheme`のようなものも利用は可能
+
+```tsx
+const RoundedOutlineButton = chakra(Button, {
+  baseStyle: (props) => {
+    // @ts-ignore
+    const { colorScheme } = props
+    return {
+      bg: `white`,
+      color: `${colorScheme}.600`,
+      borderColor: `${colorScheme}.600`,
+      borderStyle: "solid",
+      borderWidth: "2px",
+      rounded: "full",
+      px: 10,
+      py: 5,
+      letterSpacing: "0.1em",
+      _hover: {
+        bg: `${colorScheme}.50`
+      }
+    }
+  }
+})
+```
 
 [^1]: PR投げたら通りました。[https://github.com/chakra-ui/chakra-ui/releases/tag/%40chakra-ui%2Fsystem%401.7.0](@chakra-ui/system@1.7.0)
 
