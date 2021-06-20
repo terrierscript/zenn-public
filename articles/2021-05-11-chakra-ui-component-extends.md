@@ -206,10 +206,51 @@ const RoundedOutlineButton = chakra(Button, {
 * 利点
     * refs周りで困らなくて済む
 * 欠点
-    * propsが取れないので拡張性が薄い
+    * ~~propsが取れないので拡張性が薄い~~
     * 既存のvariantとの重ね合わせみたいになって、脳みそがパンクしそう
 
-propsが取れないのはかなり致命的な部分なので、この手法はほとんど使えない可能性がある。
+~~propsが取れないのはかなり致命的な部分なので、この手法はほとんど使えない可能性がある。~~
+
+### 2021/06/20追記
+
+v1.7.0より、FactoryのbaseStyleも関数を与えることでpropsを取得できるようになった[^1]
+
+```tsx
+const RoundedOutlineButton = chakra(Button, {
+  baseStyle: (props) => {
+    return {
+      bg: props.bg,
+      borderWidth: "2px",
+      rounded: "full",
+      px: 10,
+      py: 5,
+      letterSpacing: "0.1em",
+    }
+  }
+})
+
+```
+
+themeも取得できるので、このようなことも可能
+
+```tsx
+const RoundedOutlineButton = chakra(Button, {
+  baseStyle: ({ theme, ...props }) => {
+    return {
+      ...theme.components.Button.variants.outline(props),
+      // borderStyle: "solid",
+      borderWidth: "2px",
+      rounded: "full",
+      px: 10,
+      py: 5,
+      letterSpacing: "0.1em",
+    }
+  }
+})
+```
+
+
+[^1]: PR投げたら通りました。[https://github.com/chakra-ui/chakra-ui/releases/tag/%40chakra-ui%2Fsystem%401.7.0](@chakra-ui/system@1.7.0)
 
 ## 結論
 
