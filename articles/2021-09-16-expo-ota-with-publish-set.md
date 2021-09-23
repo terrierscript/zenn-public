@@ -1,10 +1,11 @@
 ---
-title: 'expoで--no-publishとpublish:setを使ってなるべく安全にOTAと付き合う'
+title: 'expoで--no-publishとpublish:setを使ってなるべく安全にOTAアップデートする'
 emoji: 🚀
 type: tech
 topics:
   - expo
   - react
+  - reactnative
   - typescript
   - javascript
 published: true
