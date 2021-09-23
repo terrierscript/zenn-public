@@ -1,5 +1,5 @@
 ---
-title: 'expoで--no-publishとpublish:setを使ってなるべく安全にOTAアップデートする'
+title: 'expoのOTAを--no-publishとpublish:setを使ってなるべく安全に扱う'
 emoji: 🚀
 type: tech
 topics:
