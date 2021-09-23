@@ -30,7 +30,7 @@ ExpoにはOTAの機能もついており、デフォルトで動作するよう�
   * 両者ともに指定されずに使われるdefaultは利用しない
 * publishは`edge`などビルドには利用しないチャンネルに投げる
 * buildはpublishとは別なチャンネルを利用する
-* `publish:set`によってリリースチャンネルとbuildを紐付ける
+* `build`、`publish`とは別途で`publish:set`でリリースチャンネルとbuildを紐付けることで分離されたデプロイを行う
 
 ## 登場用語
 
