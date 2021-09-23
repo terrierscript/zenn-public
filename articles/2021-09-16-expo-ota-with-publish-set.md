@@ -14,7 +14,11 @@ published: true
 Expoはビルドをサーバーで行ってくれたり、React nativeにまつわる様々な問題を対処してくれるとても良いツールだ。
 
 ExpoにはOTAの機能もついており、デフォルトで動作するようになっているが、若干便利さが重視されており、プロダクション向けに使うには色々考えることが必要だった。
-[expoをオレオレバージョニング](https://zenn.dev/terrierscript/articles/2020-08-27-expo-versioning-rules)しながら色々やりくりしていたが、やはりリリースサイクルを早めたくなるとOTAをちゃんと使っていきたいという気持ちになったので考えた
+[expoをオレオレバージョニング](https://zenn.dev/terrierscript/articles/2020-08-27-expo-versioning-rules)しながら色々やりくりしていたが、やはりリリースサイクルを早めたくなるとOTAをちゃんと使っていきたいという気持ちになったので考えた。
+
+なお、ExpoのOTAの基礎的な部分については解説を省略している箇所があるため、詳細な点など知りたい場合は下記の記事などが手助けになるだろう
+
+* https://zenn.dev/marin_a___/articles/7eec197a8c3579
 
 ## TL;TD
 
