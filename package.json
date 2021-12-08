@@ -7,5 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "zenn-cli": "^0.1.79"
+  },
+  "scripts": {
+    "start": "zenn"
   }
 }
