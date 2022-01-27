@@ -1,5 +1,5 @@
 ---
-title: NativeBaseで間違ったContrast警告を表示されるのを解決する
+title: NativeBaseでContrast警告が誤判定表示されるのを解決する
 emoji: 🌓
 type: tech
 topics:
@@ -34,6 +34,7 @@ primary.500 on transparent
 * https://github.com/GeekyAnts/NativeBase/issues/4345
 
 今のところ値を調整する以外ではこのチェック自体をオフにするしか解決手段はなさそうだ。
+あまり気持ちのいい解決ではないが、透過に対して計算しているので仕方がない部分にはなりそうだ
 
 ```tsx
 <NativeBaseProvider 
