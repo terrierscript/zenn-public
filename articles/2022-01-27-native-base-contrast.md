@@ -1,5 +1,5 @@
 ---
-title: NativeBaseで白背景の透過に対するContrast警告を表示されるのを解決する
+title: NativeBaseで間違ったContrast警告を表示されるのを解決する
 emoji: 🌓
 type: tech
 topics:
