@@ -24,6 +24,7 @@ generator erd {
 
 こうすることで`prisma/scheme.md`などに出力される
 
+ドキュメントにはあまり深く記載されてないが、ソースを見るとたしかにそのように処理されるようだった。
 * https://github.com/keonik/prisma-erd-generator/blob/eb90bdfc4f1042ee1dee300464355bc553eac9fa/src/generate.ts#L350-L355
 
 ## その他
