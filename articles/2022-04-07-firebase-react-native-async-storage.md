@@ -35,8 +35,8 @@ import { getReactNativePersistence } from 'firebase/auth/react-native'
 const initalizeFirebase = () => {
   const app = initializeApp(FIREBASE_CONFIG)
   
+  // ↓この設定を追加
   initializeAuth(app, {
-    // ↓この設定を追加
     persistence: getReactNativePersistence(AsyncStorage)
   })
 }
