@@ -1,5 +1,5 @@
 ---
-title: firebaseが古いAsyncStorageを利用して警告されるのを防ぐ
+title: firebaseが古いAsyncStorageを利用してるのが原因の警告に対処する
 emoji: 🦵
 type: tech
 topics:
