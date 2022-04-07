@@ -1,5 +1,5 @@
 ---
-title: firebaseによるAsyncStorage警告をgetReactNativePersistenceで解決する
+title: firebaseによるAsyncStorage警告はgetReactNativePersistenceで解決できる
 emoji: 🦵
 type: tech
 topics:
