@@ -90,7 +90,7 @@ const handler: NextApiHandler<AnimalPostRequest> = async (req, res) => {
 }
 ```
 
-## クエリパラメータの`string|string[]`の処理を怠ける
+## クエリパラメータの`string|string[]`を`[value].flat(1)`で怠ける
 
 最後にクエリパラメータの処理。
 これはいくらか乱暴なので使用箇所には注意。
@@ -116,8 +116,6 @@ const handler: NextApiHandler = async (req, res) => {
 ```
 
 一方管理画面などアクセスを制限でき、更にDynamic Routingによって(`/api/books/[id].ts`,`/api/books/[[...idList]].ts`)`string`か`string[]`かがほぼ変わらないようなケースならもう少し手を抜きたい。
-
-### `[arrayOrString].flat(1)`で処理をまとめる
 
 `string`にしたい場合は`toString`やtemplate litralを利用する手抜きが考えられるだろう
 
