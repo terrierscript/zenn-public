@@ -6,7 +6,7 @@ topics:
   - react
   - typescript
   - reacthookform
-published: false
+published: true
 ---
 
 チャット的なUIでreact-hook-formを利用する際、submitしたらもう一度inputフォームにフォーカスするようなのをやりたくなった。
@@ -46,6 +46,8 @@ export const RefocusInput: FC<{
 
 ## やってること
 
+### 送信部分
+
 まず送信部分で`resetField`することで入力を消している。本当は成功を確認してからのほうが良いかもしれない
 
 ```tsx
@@ -55,7 +57,22 @@ export const RefocusInput: FC<{
 })}>
 ```
 
-フォーカスする部分は`formState.submitCount`で送信回数が変わる事を起点にしている。
+ちなみに、ここで`setFocus`すれば良いのでは？と思うところだが、どうやらこれは動かないらしかった
+
+```tsx
+// ダメだった例
+<form onSubmit={handleSubmit(async (data) => {
+  await onSubmit(data.value)
+  resetField("value")
+  setFocus("value")
+})}>
+```
+
+###　フォーカス部分
+
+submitタイミングでフォーカスできないため、effectとしてフォーカスする必要がある。
+
+今回フォーカスする部分は`formState.submitCount`で送信回数が変わる事を起点にしている。
 
 ```tsx
 useEffect(() => {
@@ -75,4 +92,4 @@ useEffect(() => {
 }, [watchValue])
 ```
 
-こちらはちょっと泥臭いのであまり使うケースは無さそうだ
+こちらはちょっと泥臭いのであまり使うケースは無さそうだ。
