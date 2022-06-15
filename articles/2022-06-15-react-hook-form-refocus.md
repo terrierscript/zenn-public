@@ -6,7 +6,7 @@ topics:
   - react
   - typescript
   - reacthookform
-published: true
+published: false
 ---
 
 チャット的なUIでreact-hook-formを利用する際、submitしたらもう一度inputフォームにフォーカスするようなのをやりたくなった。
@@ -46,7 +46,7 @@ export const RefocusInput: FC<{
 
 ## やってること
 
-まず送信部分で`reset`することで入力を消している。
+まず送信部分で`resetField`することで入力を消している。本当は成功を確認してからのほうが良いかもしれない
 
 ```tsx
 <form onSubmit={handleSubmit(async (data) => {
