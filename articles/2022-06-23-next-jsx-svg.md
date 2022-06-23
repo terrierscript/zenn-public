@@ -1,6 +1,6 @@
 ---
 title: next.jsでJSX記述したSVGを返したい
-emoji: 🫶
+emoji: 🤙
 type: tech
 topics:
   - nextjs
