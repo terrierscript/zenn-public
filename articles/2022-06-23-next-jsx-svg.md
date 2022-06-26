@@ -1,5 +1,5 @@
 ---
-title: next.jsでJSX記述したSVGを返したい
+title: next.jsでJSX記述したSVGを動的に返したい
 emoji: 🤙
 type: tech
 topics:
