@@ -1,5 +1,5 @@
 ---
-title: next.jsでモノレポツールを入れずに複数のアプリを起動出来るようにしたい
+title: next.jsでモノレポツールを入れずに複数のサービス起動出来るようにしたい
 emoji: 👨‍👩‍👧‍👦
 type: tech
 topics:
