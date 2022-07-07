@@ -11,7 +11,7 @@ published: true
 
 next.jsで同じリポジトリを使いつつ複数の別なアプリケーションとして起動したいケースが度々有る。
 
-この場合、殆どはturbolinkやnxなどのmonorepoツールを利用する方法が広く知られている。
+この場合、殆どはturborepoやnxなどのmonorepoツールを利用する方法が広く知られている。
 next.jsの公式でも[Multi zoneの例](https://nextjs.org/docs/advanced-features/multi-zones)ではmonorepoが利用されている
 
 一方でmonorepoは各所対応してない場合があったり気を使う部分も多く、一定の覚悟を必要になる
@@ -266,7 +266,7 @@ app-*/.next
 }
 ```
 
-## next.config.jsでwebpackの設定を変個する（共有ディレクトリがある場合）
+## next.config.jsでwebpackの設定を変更する（共有ディレクトリがある場合）
 
 デフォルトのnext.config.jsの場合、`app-xxx`の下のディレクトリしかコンパイルされなかったりモジュール解決されなかったりするので、共通ディレクトリがある場合は下記のようにwbpackの設定を入れると解決される。
 
