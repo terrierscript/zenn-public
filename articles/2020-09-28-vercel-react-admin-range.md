@@ -92,8 +92,8 @@ INTERNAL_SERVER_ERROR
 
 ```bash
 $ curl https://example-range-error.vercel.app/api/hello -H "Range: bytes=0-10"
-{"name":"Jo%
+{name: "John Doe"}
 ```
 
 Rangeヘッダのunitが正しくない場合は無視してくれると期待してたがそうでない実装はありえそうだ。
-幸いReact AdminのDataProviderは選べるので、やはり「Rangeヘッダを利用する」というのを避けるのが無難であろう。
+幸いReact AdminのDataProviderは選べるので、やはり「Rangeヘッダを利用するData Providerを避ける」というのが無難であろう。
