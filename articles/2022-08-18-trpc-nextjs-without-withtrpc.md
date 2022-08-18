@@ -1,5 +1,5 @@
 ---
-title: tRPCとnext.jsの組み合わせをするときwithTRPCをしないで利用したい
+title: tRPCとnext.jsの組み合わせでwithTRPCをしないで利用したい話とtRPC便利だったとこメモ
 emoji: 🐯
 type: tech
 topics:
@@ -121,7 +121,8 @@ const Greeting = () => {
 SWRと組み合わせる部分はキーが重複したりしそうな部分もあるので、ちょっとここは注意が必要
 本当はもう少し頑張れば`useSWRTrpcQuery`みたいなのも作れるが、そこまでほしい場合は[`trpc-swr`](https://github.com/sachinraja/trpc-swr)の利用を検討するのが良いかもしれない
 
-## その他tRPCの良かったとこ
+## その他：　tRPCの良かったとこ
+
 tRPCを一通り触って便利だった部分メモ書き
 
 ### マージ機能
