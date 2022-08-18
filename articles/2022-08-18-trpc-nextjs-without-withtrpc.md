@@ -172,7 +172,7 @@ export default trpcNext.createNextApiHandler({
 })
 ```
 
-### trnasform周り
+### transform周り
 
 * https://trpc.io/docs/data-transformers
 
