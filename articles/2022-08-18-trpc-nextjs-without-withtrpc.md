@@ -1,5 +1,5 @@
 ---
-title: tRPCとnext.jsの組み合わせをライトに行う 
+title: tRPCとnext.jsの組み合わせで、withTRPC
 emoji: 🐯
 type: tech
 topics:
