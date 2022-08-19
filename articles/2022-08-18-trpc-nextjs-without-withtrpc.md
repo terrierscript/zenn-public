@@ -1,5 +1,5 @@
 ---
-title: tRPCとnext.jsの組み合わせで、withTRPCを使うほどでも無い時の方法
+title: tRPCとnext.jsの組み合わせで、withTRPCを使うほどでもない時のライトに使う方法
 emoji: 🐯
 type: tech
 topics:
