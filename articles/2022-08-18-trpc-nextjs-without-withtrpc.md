@@ -1,5 +1,5 @@
 ---
-title: tRPCとnext.jsの組み合わせでwithTRPCをしないで利用したい話とtRPC便利だったとこメモ
+title: tRPCとnext.jsの組み合わせをライトに行う 
 emoji: 🐯
 type: tech
 topics:
@@ -30,6 +30,7 @@ next.jsのAPI周りは気軽に使えて便利なのだが、型周りを考え�
   * クライアント認証を挟むような場合だと若干過剰
 * SWR派なので、react-queryを利用する部分がちょっと悩ましい
   * react-queryを使うにしても一つ古い`v3`系にされているので、ちょっと気が進まない
+  * ちなみに[`trpc-swr`](https://github.com/sachinraja/trpc-swr)というのもあるので、SWRを使いつつSSR対応したい場合はこれを使うのが良さそう
 * `middleware`やContextなどの処理が違う複数のエンドポイントを作りたい要件だと同様課題がある
 
 ## 対処：`withTRPC`は利用せず、VanillaなClientと組み合わせる
@@ -118,81 +119,4 @@ const Greeting = () => {
 }
 ```
 
-SWRと組み合わせる部分はキーが重複したりしそうな部分もあるので、ちょっとここは注意が必要
-本当はもう少し頑張れば`useSWRTrpcQuery`みたいなのも作れるが、そこまでほしい場合は[`trpc-swr`](https://github.com/sachinraja/trpc-swr)の利用を検討するのが良いかもしれない
-
-## その他：　tRPCの良かったとこ
-
-tRPCを一通り触って便利だった部分メモ書き
-
-### マージ機能
-* https://trpc.io/docs/merging-routers
-
-Routerの部分が太ってしまいそうだなというのが結構懸念だったが、mergeする機能があるのでこれは便利そうだった。
-
-```ts
-const appRouter = createRouter()
-  .merge('user.', users) 
-  .merge('post.', posts)
-```
-
-### Infer typeとContext
-* https://trpc.io/docs/infer-types
-* https://trpc.io/docs/context
-
-各種Infer系が揃っているので、これも型を再定義しないのは楽に感じた。
-
-Context周りも`inferAsyncReturnType`などを利用すれば良いようだた。
-ざっくり組み合わせると下記のような具合に共通化できてよかった
-
-```ts
-const createUserAppContext = (opts?: trpcNext.CreateNextContextOptions) => {
-  // 本来は認証など色々共通処理を行う
-  return {
-    foo: "baz"
-  }
-}
-
-type UserAppContext = trpc.inferAsyncReturnType<typeof createUserAppContext>
-
-const createUserAppRouter = () => {
-  return trpc.router<UserAppContext>()
-}
-
-export const userRouter = createUserAppRouter()
-  .query( .... )
-
-// export type definition of API
-export type UserAppRouter = typeof userRouter
-
-// export API handler
-export default trpcNext.createNextApiHandler({
-  router: userRouter,
-  createContext: createUserAppContext
-})
-```
-
-### transform周り
-
-* https://trpc.io/docs/data-transformers
-
-Prismaとnext.jsを組み合わせる際、Date型が引き継げなくて`superjson`を挟む必要が出てきたりするのだが、これも`transform`というオプションを使えば良い。クライアント側、サーバー側どちらも設定するのを忘れずに
-
-```ts
-// サーバー側
-export const appRouter = trpc.router()
-  .transformer(superjson)
-```
-
-```tsx
-// client側
-const useUserTrpc = () => {
-  const client = useMemo(() => {
-    return createTRPCClient<UserAppRouter>({
-      url: '/api/user/trpc',
-      transformer: superjson,
-    })
-  }, [])
-  return client
-}
-```
+SWRと組み合わせる部分は、URLで扱う場合よりもキーが重複したりしそうな部分もあるので、ちょっとここは注意が必要。
