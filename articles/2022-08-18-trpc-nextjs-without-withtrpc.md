@@ -47,7 +47,8 @@ tRPCはフレームワークを問わないライブラリで、素のTypeScript
 
 ### サーバー側
 
-複数のエンドポイントを分けたいので、下記のようにエンドポイントを複数作る。
+今回は複数のエンドポイントを意図的に分けるケースを考えたいので、下記のようにエンドポイントを複数作ることを考えてみる[^1]
+[^1]: 通常は[マージ機能](https://trpc.io/docs/merging-routers)を使えばよいが、middlewareを組み合わせたい場合に分けたいケースがあった
 
 * `/pages/api/user/trpc/[trpc].ts`
 * `/pages/api/admin/trpc/[trpc].ts`
