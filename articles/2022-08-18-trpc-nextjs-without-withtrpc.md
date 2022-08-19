@@ -1,5 +1,5 @@
 ---
-title: tRPCとnext.jsの組み合わせで、withTRPC
+title: tRPCとnext.jsの組み合わせで、withTRPCを使うほどでも無い時の方法
 emoji: 🐯
 type: tech
 topics:
