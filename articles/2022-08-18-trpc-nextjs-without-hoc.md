@@ -88,6 +88,9 @@ export default trpcNext.createNextApiHandler({
 `useMemo`を利用しているが、用途によっては特にhooks化する必要もないかもしれない
 
 ```tsx
+// Routerの型はclientに読み込んだりするとたまにうまくビルドできないケースが見られたので、import typeのみ呼び出したほうが良さそう
+import type { AdminAppRouter } from "../app/server/AppRouter"
+
 const useAdminTrpc = () => {
   const client = useMemo(() => {
     return createTRPCClient<AdminAppRouter>({
