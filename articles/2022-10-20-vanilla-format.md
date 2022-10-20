@@ -82,4 +82,6 @@ const getFormatParts = (date: Date) => {
 ```ts
 const dateParts = getFormatParts(new Date())
 const formatted = `${dateParts.month}月${dateParts.day}日 [${dateParts.weekday}]`
+
+// => '10月20日(木曜日)'
 ```
