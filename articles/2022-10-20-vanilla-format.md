@@ -34,7 +34,7 @@ new Intl.DateTimeFormat("ja-JP",{month:"long", day:"numeric" })
 new Intl.DateTimeFormat("ja-JP")
   .formatToParts(new Date())
 ```
-```
+```json
 [
   {"type": "year","value": "2022"},
   {"type": "literal", "value": "/"},
@@ -63,7 +63,7 @@ const getFormatParts = (date: Date) => {
 }
 ```
 
-```
+```json
 {
     "year": "2022",
     "literal": "秒 ",
