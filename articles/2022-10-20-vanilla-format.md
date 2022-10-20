@@ -1,6 +1,6 @@
 ---
 title: formatToPartsとObject.fromEntriesで自由にformatする
-emoji: 👨‍🎨
+emoji: 📆
 type: tech
 topics:
   - javascript
