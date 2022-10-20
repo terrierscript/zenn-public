@@ -1,5 +1,5 @@
 ---
-title: formatToPartsとObject.fromEntriesで自由にformatする
+title: formatToPartsとObject.fromEntriesで自由に日付や時間をformatする
 emoji: 📆
 type: tech
 topics:
