@@ -1,5 +1,5 @@
 ---
-title: tRPCのv9からv10にmigrateするinteropを使うときのclientのハマりどころ
+title: tRPCのv9からv10にmigrateするときのclientのハマりどころ
 emoji: 🛺
 type: tech
 topics:
