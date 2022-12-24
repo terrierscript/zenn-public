@@ -12,7 +12,7 @@ published: true
 published_at: 2022-12-26 08:00
 ---
 
-playwrightでnext.jsのテストを実行してcoverageまで取るのが結構情報揃ってなかったのでまとめる。
+playwrightでnext.jsのテストを実行してcoverageまで取るのがわりと情報揃ってなかったのでまとめる。
 
 # 準備
 
@@ -158,6 +158,7 @@ export default config
 ```
 
 こうするとplaywrightを実行時に勝手に`dev:coverage`を実行してそちらを利用してくれる。
+もしカバレッジを取らないplaywright実行もしたい場合はこちらもenv等を受け取って切り替えるようなことをすると良いだろう
 
 最後に実行コマンドを追加
 
