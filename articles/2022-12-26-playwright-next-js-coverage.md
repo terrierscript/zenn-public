@@ -14,7 +14,18 @@ published_at: 2022-12-26 08:00
 
 playwrightでnext.jsのテストを実行してcoverageまで取るのがわりと情報揃ってなかったのでまとめる。
 
-# 準備
+# 手順の流れ
+今回は、下記の手順を踏んでいく
+
+* 1. テストの準備対応
+  * `@playwright/test`の代わりに`playwright-test-coverage`を利用する
+* 2. カバレッジモードのnextの設定
+  * `nyc`を利用する`next.js`の起動モードを準備する(next.config.jsの設定)
+* 3. playwrightとnycをつなぐ
+  * playwrightからの起動時に`nyc`を利用した起動モードを利用する
+
+
+# 1. テストの準備対応
 
 とりあえず普通にnext.js側のファイルを用意
 
@@ -63,7 +74,7 @@ test("index", async ({ page }) => {
 
 ここでカバレッジのために`@playwright/test`の代わりに`playwright-test-coverage`を利用する
 
-# nyc周りの設定・next.config等の設定
+# 2. カバレッジモードのnextの設定
 
 カバレッジに必要な`nyc`と、babelでコードも対応させる必要があるのでそのあたりもインストールする
 
@@ -117,7 +128,7 @@ webpackの設定は[next.jsのDiscussion](https://github.com/vercel/next.js/disc
   }
 ```
 
-ついでに`nyc.config.js`も設定しておく
+`nyc.config.js`も設定しておく
 
 ```js
 module.exports = {
@@ -127,14 +138,15 @@ module.exports = {
 }
 ```
 
-`.gitignore`も設定する
+カバレッジ関連のファイルを無視したので、`.gitignore`も設定する
 
 ```
 .next_coverage/
 .nyc_output/
+coverage/
 ```
 
-# playwrightとnycをつなぐ
+# 3. playwrightとnycをつなぐ
 
 playwrightには`webServer`という設定があるので、これを利用する
 
