@@ -105,10 +105,7 @@ module.exports = () => {
         return config
       }
     }
-
-    return {
-      ...coverageConfig
-    }
+    return coverageConfig
   }
   return {}
 }
