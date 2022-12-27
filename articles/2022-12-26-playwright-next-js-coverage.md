@@ -5,8 +5,8 @@ type: tech
 topics:
   - nextjs
   - playwright
-  - nyc
-  - istanbul
+  - test
+  - CI
   - typescript
 published: true
 published_at: 2022-12-26 08:00
