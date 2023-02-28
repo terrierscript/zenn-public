@@ -1,5 +1,5 @@
 ---
-title: Chakra UIでVanilla CSSなカルーセルを組み込む
+title: Chakra UIにVanilla CSSなカルーセルを組み込む
 emoji: 🎠
 type: tech
 topics:
