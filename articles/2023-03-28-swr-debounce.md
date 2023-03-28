@@ -1,5 +1,5 @@
 ---
-title: SWRでdebounceしつつ以前の結果を表示しないようにする
+title: SWRでdebounceしつつ以前の結果を表示しないようにするまで
 emoji: 🏓
 type: tech
 topics:
