@@ -1,5 +1,5 @@
 ---
-title: SWRでdebounceしつつ以前の結果を表示しないようにするまで
+title: SWRでdebounceしつつ、値が変更されたら即座に以前の結果を表示しないようにする
 emoji: 🏓
 type: tech
 topics:
