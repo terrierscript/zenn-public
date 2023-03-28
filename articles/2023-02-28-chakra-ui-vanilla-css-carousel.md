@@ -1,5 +1,5 @@
 ---
-title: Chakra UIにVanilla CSSなカルーセルを組み込む
+title: Chakra UIにCSSのscroll-snapだけのライブラリなしカルーセルを実装する
 emoji: 🎠
 type: tech
 topics:
