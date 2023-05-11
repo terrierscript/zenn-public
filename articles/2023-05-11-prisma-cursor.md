@@ -4,7 +4,7 @@ emoji: 👉
 type: tech
 topics:
   - prisma
-  - typescipt
+  - typescript
   - sql
 published: true
 ---
