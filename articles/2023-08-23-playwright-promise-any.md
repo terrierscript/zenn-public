@@ -35,8 +35,6 @@ waiting for locator('.some-element') to be visible
 
 ## エラーを潰したいとき
 
-puppeteerであれば[AbortController](https://github.com/puppeteer/puppeteer/pull/10018)が`waitForSelector`などで利用できるのだが、残念ながらPlaywrightにはまだ実装されていない。
-
 もしエラーが気になるなら、`waitForFunction`などで独自に実装するしかない
 
 ```ts
@@ -51,3 +49,4 @@ await page.waitForFunction(async () => {
 })
 ```
 
+ちなみにpuppeteerであれば[AbortController](https://github.com/puppeteer/puppeteer/pull/10018)が`waitForSelector`などで利用できるらしいのだが、残念ながらPlaywrightにはまだ実装されていない。
