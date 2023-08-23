@@ -1,5 +1,5 @@
 ---
-title: Playwrightで複数の条件待ちはPromise.anyで解消できる
+title: Playwrightで複数いずれかの条件待ちたいとき
 emoji: 🤡
 type: tech
 topics:
