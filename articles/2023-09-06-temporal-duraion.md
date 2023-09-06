@@ -1,5 +1,5 @@
 ---
-title: Temporal.Duraionから◯日前みたいな文字列にする
+title: Temporal.Duraionから◯日前みたいなlocale対応した文字列にする
 emoji: ⏱️
 type: tech
 topics:
