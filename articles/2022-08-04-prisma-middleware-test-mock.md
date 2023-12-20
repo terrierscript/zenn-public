@@ -8,6 +8,11 @@ topics:
 published: true
 ---
 
+:::message alert
+`$use`については`deprecated`となったので、この記事はすでに古い情報です。
+代替として利用できる[`$extends`を利用したバージョン](https://zenn.dev/terrierscript/articles/2023-12-19-prisma-extend-mock)を記載したので、そちらを参考にしてください
+:::
+
 Prismaの絡む部分でテストしたい時に[Middleware](https://www.prisma.io/docs/concepts/components/prisma-client/middleware)の機能を使えばテスト用DBやjestのmockなど使えばできることがわかった。
 
 ## 例
