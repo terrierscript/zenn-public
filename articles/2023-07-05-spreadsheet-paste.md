@@ -44,7 +44,7 @@ textareaはただの受け口のUIなので`readOnly`としている。
 ここからHTMLのパースに入る。やり方は色々あるが、今回はほぼ自分用の機能だったので、[DOMParser](https://developer.mozilla.org/ja/docs/Web/API/DOMParser)の機能をそのまま利用する形を取った。
 もし一般ユーザーに使ってもらうなど、セキュリティを気にしたいケースであれば、ライブラリを利用したり、サーバーサイドで行うなどをすると良いだろう
 
-* [html5](https://www.npmjs.com/package/html5)や
+* [html5](https://www.npmjs.com/package/html5)
 * [cheerio](https://www.npmjs.com/package/cheerio)
 * [parse5](https://www.npmjs.com/package/parse5)
 
