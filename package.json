@@ -6,7 +6,7 @@
   "author": "terrierscript <13282103+terrierscript@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "zenn-cli": "^0.1.151"
+    "zenn-cli": "^0.1.153"
   },
   "scripts": {
     "start": "zenn"
