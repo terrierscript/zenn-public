@@ -9,9 +9,9 @@ topics:
 published: true
 ---
 
-BigQueryで日付ごとなどでパーティションしているテーブルに対して、1年など長めにデータを欲しいが全期間取ってしまうと読み込み量が多くなってしまうので困るので対策を考えた
+BigQueryで日付ごとなどでパーティションしているテーブルに対して、1年以上など長めにデータ見たいが全期間取ってしまうと読み込み量が多くなってしまうので困るので対策を考えた
 
-## `GENERATE_DATE_ARRAY`を使う
+## `GENERATE_DATE_ARRAY`を使って間引きする
 
 指定期間の日付の配列を生成してくれる`GENERATE_DATE_ARRAY`という関数が存在する
 * https://cloud.google.com/bigquery/docs/reference/standard-sql/array_functions#generate_date_array
@@ -32,6 +32,12 @@ SELECT GENERATE_DATE_ARRAY(
 2024-03-19
 2024-03-21
 ```
+
+:::message
+クエリを実行前に、BigQueryコンソール右上の「このクエリを実行すると、XXX KB が処理されます」の見込み量を確認して、想定通りに動いている確認をすることを推奨します。
+:::
+
+これで日付を一定期間サンプリングすれば、読み込み量を減らすことができる。
 
 実際のクエリで利用する場合は下記のような感じ。`GENERATE_DATE_ARRAY`が配列で返ってくるので、これをIN句で分割しているフィールドに対して指定する
 
