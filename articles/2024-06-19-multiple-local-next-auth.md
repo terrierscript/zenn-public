@@ -1,5 +1,5 @@
 ---
-title: next-authを複数のプロジェクトで利用してるときにローカル環境が奪い合いになる問題に向き合う
+title: next-authを複数のプロジェクトで利用してるときにローカル環境のセッションが奪い合いになる問題に向き合う
 emoji: 🏘️
 type: tech
 topics: [typescript, nextjs, nextauth]
