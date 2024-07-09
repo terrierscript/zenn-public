@@ -45,12 +45,7 @@ SELECT GENERATE_DATE_ARRAY(
 SELECT *
 FROM sourced_data
 WHERE DATE(_PARTITIONDATE) IN UNNEST(
-    GENERATE_DATE_ARRAY(
-        DATE_SUB(CURRENT_DATE('Asia/Tokyo'), INTERVAL 1 year), 
-        CURRENT_DATE('Asia/Tokyo')
-    , 
-    INTERVAL 5 day
-    ) 
+    GENERATE_DATE_ARRAY(DATE_SUB(CURRENT_DATE('Asia/Tokyo'), INTERVAL 1 year), CURRENT_DATE('Asia/Tokyo'), INTERVAL 5 day) 
 )
 ```
 
