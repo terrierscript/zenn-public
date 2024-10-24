@@ -4,7 +4,7 @@ emoji: 🔊
 type: tech
 topics:
   - audio
-  - typesript
+  - typescript
   - react
 published: true
 ---
