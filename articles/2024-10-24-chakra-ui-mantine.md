@@ -153,3 +153,9 @@ module "@chakra-ui/react" {
 }
 ```
 
+# まとめ
+このようにChakra UIとmantineの混在する方法を示した。CSSの頃のように競合せずに順次置き換えていけることはありがたい。（とはいえエッジケースやdark modeのようなものを含む場合は未検証なので、そのような場合は要注意）
+
+Chakra UI v2 から v3へ一気に移植するのもかなり課題が大きい可能性がある[^1]ので、`Chakra UI v2` -> `別なライブラリ` -> `Chakra UI v3`のような置き換えも検討の一つになるだろう
+
+[^1]: migration guideはあるものの、例えばButtonの`colorSchema`が`colorPalette`になっており、更にこれがTypeScriptとしてはエラーとして検出もされないなど、カロリーが高そうだった。
