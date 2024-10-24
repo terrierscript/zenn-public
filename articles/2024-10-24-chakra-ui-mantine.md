@@ -20,7 +20,7 @@ published: true
 
 また、今回は「それなりに機能が近い」ぐらいを目標として、見た目が完全に一致することは求めないレベルで考える
 
-# 1. Chakra UIの場合
+# 前提: Chakra UIの場合
 
 まず元となるChakra UIでのPopoverはこのような具合になる
 
@@ -43,7 +43,7 @@ const PopoverSample = () => {
 }
 ```
 
-# 2. mantineを乗せていく(共存)
+# 1. mantineを共存させる
 
 まずはコンポーネントのインストール
 
@@ -52,7 +52,7 @@ $ yarn add @mantine/core @mantine/hooks
 $ yarn add --dev postcss postcss-preset-mantine postcss-simple-vars
 ```
 
-次にレイアウトに変更を加える。CSSの読み込みと、MantineProviderの追加を行う
+次にレイアウトに変更を加える。CSSの読み込みと、MantineProviderの追加を行う。`ChakraProvider`の付近が良いだろう
 
 ```tsx
 // app/layout.tsx
@@ -77,7 +77,7 @@ export default function RootLayout({
 }
 ```
 
-## Popoverの移植
+# 2. Popoverを移植してみる
 
 Popoverを最低限置き換えるとこのような形になる。
 
@@ -103,7 +103,7 @@ const PopoverSample = () => {
 
 あえてChakra UIとmantieを混ぜている。気持ち悪さはあるものの、特に競合することもなく動いてくれるのは移植においてはありがたいことだろう。
 
-### Close Buttonもほしい場合
+## 2-2. Close Buttonもほしい場合
 Close Buttonはmantineには無いので、そこまで欲しい場合は自前する必要がある。
 （こちらはすべてmantineの場合で記載している）
 
