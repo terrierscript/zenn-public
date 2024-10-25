@@ -64,7 +64,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="ja" suppressHydrationWarning>
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body>
         <ChakraProvider>
           <MantineProvider>
@@ -76,6 +79,9 @@ export default function RootLayout({
   )
 }
 ```
+
+また、[next app用のテンプレート](https://github.com/mantinedev/next-app-min-template/blob/master/app/layout.tsx)を参考に、`<ColorSchemaScript />`と`suppressHydrationWarning`を追加している。
+
 
 # 2. Popoverを移植してみる
 
