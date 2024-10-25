@@ -159,6 +159,17 @@ module "@chakra-ui/react" {
 }
 ```
 
+neverまではしたくない場合は下記のようにしてdeprecatedだけわかるようにするのでも良いだろう
+
+```ts
+export * as Chakra from "@chakra-ui/react"
+
+module "@chakra-ui/react" {
+  /** @deprecated mantineを使いましょう */
+  const Popover: Chakra.Popover
+}
+```
+
 # まとめ
 このようにChakra UIとmantineの混在する方法を示した。CSSの頃のように競合せずに順次置き換えていけることはありがたい。（とはいえエッジケースやdark modeのようなものを含む場合は未検証なので、そのような場合は要注意）
 
