@@ -1,5 +1,5 @@
 ---
-title: next.js 15に備えてPageやLayoutに独自型をつけておく
+title: next.js 15に備えてPageやLayoutに独自型定義をつけておく
 emoji: 🛁
 type: tech
 topics:
