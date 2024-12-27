@@ -1,5 +1,5 @@
 ---
-title: next.jsのAppRouterでCookieをいい感じで扱う方法を考える
+title: next.jsのAppRouterでCookieをいい感じで扱う落とし所を考える
 emoji: 🍪
 type: tech
 topics:
