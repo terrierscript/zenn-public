@@ -199,7 +199,7 @@ export const counterSerializer = (value: number): string => {
 }
 ```
 
-## APIでも利用する
+# APIでも利用する
 
 APIから利用する場合の例。converterを作っておくと、ここでも利用ができる
 
@@ -217,3 +217,6 @@ export const GET = async () => {
   cookieValues.set(targetKey, counterSerializer(value + 1))
 }
 ```
+
+ひとまずここまででサーバー・クライアントである程度共通に扱えるようなものが出来た。`cookies-next`はserver/cookieどちらでも扱えるのだが、微妙に同名なわりに引数や挙動が変わるので、好みが分かれそうだ。
+cookie自体に対してはあまり複雑な構造化はさせずstringで受け渡しをして、外側でコンバーターのようなものを挟んでやりとりする方がいっそスッキリしそうだった
