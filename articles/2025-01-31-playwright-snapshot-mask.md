@@ -124,14 +124,14 @@ test('snapshot', async ({ page }) => {
     ".navbar__title.text--truncate",
     ".getStarted_Sjon"
   ]
-  const hiddenCss = target.map(selector => `${selector} { filter: blur(20px);  }`).join("\n")
+  const hiddenCss = target.map(selector => `${selector} { filter: blur(5px);  }`).join("\n")
   await page.addStyleTag({ content: hiddenCss })
   await expect(page).toHaveScreenshot()
 })
 ```
 
-![](https://storage.googleapis.com/zenn-user-upload/d722630244dd-20250131.png)
+![](https://storage.googleapis.com/zenn-user-upload/4cba4146cf5a-20250131.png)
 
-分かりづらいがうっすらボケているのがわかる
+少し分かりづらいがうっすらボケているのがわかる
 
 「全部隠したくはないけどmaxDiffPixelsを調整してそれなりに近いと嬉しい」みたいな場合に使えるかもしれない
