@@ -20,7 +20,7 @@ Type-VのNFCタグにNDEFを書き込もうと`writeNDEF`を利用したらエ�
 
 # フォーマット処理の全体像
 
-メインとなる`formatISO15693TagToNDEF`関数を作る。タグの情報を取得して、CCブロックを構築しつつ、NDEFデータ領域を確保していく
+`formatISO15693TagToNDEF`関数でタグからシステム情報を取得し、CCブロックの構築とNDEFデータ領域の確保を行う。
 
 ```swift
 func formatISO15693TagToNDEF(tag: NFCISO15693Tag, session: NFCTagReaderSession) async throws {
@@ -31,8 +31,8 @@ func formatISO15693TagToNDEF(tag: NFCISO15693Tag, session: NFCTagReaderSession) 
     let versionNumber: UInt8 = 0x01
     let ccBlock: [UInt8] = ndefMagicNumber + [0x30, versionNumber]
     
-    let length: [UInt8] = encodeTLVLength(info.blockSize)
     let ndefTagFlag: UInt8 = 0x03  // NDEFメッセージTLVを示す
+    let length: [UInt8] = encodeTLVLength(info.blockSize)
     let startTLV: [UInt8] = [ndefTagFlag] + length
     
     let header: [UInt8] = ccBlock + startTLV
@@ -46,6 +46,69 @@ func formatISO15693TagToNDEF(tag: NFCISO15693Tag, session: NFCTagReaderSession) 
     try await writeBlocksSequentially(tag: tag, blocks: blocks)
 }
 ```
+
+## formatISO15693TagToNDEF関数
+
+### 処理の概要
+
+NDEFメッセージ書き込みの前処理としてType-V NFCタグを初期化する関数。処理は以下の5ステップで構成される。
+
+1. タグからシステム情報を取得
+
+```swift
+let info = try await getSystemInfo(tag: tag)
+```
+
+ブロックサイズなど以降の処理に必要な情報がここに格納される。
+
+2. CCブロック（Capability Container）の構築
+
+```swift
+let blockSize = info.blockSize
+let ndefMagicNumber: [UInt8] = [0xE1, 0x40] // NFCフォーラム Type-V タグを示す
+let versionNumber: UInt8 = 0x01
+let ccBlock: [UInt8] = ndefMagicNumber + [0x30, versionNumber]
+```
+
+CCブロックの各バイトの役割:
+* `[0xE1, 0x40]`: Type-Vタグのマジックナンバー
+* `0x30`: 読み書き可能を示すアクセス権限バイト
+* `0x01`: NDEFマッピングバージョン
+
+3. TLV（Type-Length-Value）構造の構築
+
+```swift
+let ndefTagFlag: UInt8 = 0x03  // NDEFメッセージTLVを示す
+let length: [UInt8] = encodeTLVLength(info.blockSize)
+let startTLV: [UInt8] = [ndefTagFlag] + length
+```
+
+* Type: `0x03`（NDEFメッセージ識別子）
+* Length: タグ容量から計算
+* Value: 後続のNDEFメッセージ格納領域
+
+4. ブロックサイズ調整のためのパディング処理
+
+```swift
+let header: [UInt8] = ccBlock + startTLV
+var paddedMessage: [UInt8] = header
+let remainder = header.count % blockSize
+if remainder != 0 {
+    paddedMessage += Array(repeating: 0, count: blockSize - remainder)
+}
+```
+
+Type-Vタグはブロック単位での書き込みが必須のため、データをブロックサイズに調整する。
+
+5. データの分割と書き込み
+
+```swift
+let blocks = splitMessageIntoBlocks(message: paddedMessage)
+try await writeBlocksSequentially(tag: tag, blocks: blocks)
+```
+
+調整済みデータをブロックサイズで分割し、タグに順次書き込む。`writeBlocksSequentially`については後述
+これにより`writeNDEF`が利用可能な状態となる。
 
 ## 各関数の実装
 
@@ -86,6 +149,7 @@ private func splitMessageIntoBlocks(message: [UInt8], blockSize: Int = 4) -> [Da
 ### ブロックの書き込み
 
 分割したブロックを順番にタグに書き込んでいく。
+`tag.writeSingleBlock`で直接書き込みの力業が必要
 
 ```swift
 private func writeBlocksSequentially(tag: NFCISO15693Tag, blocks: [Data]) async throws {
