@@ -9,7 +9,7 @@ topics:
 published: true
 ---
 
-Type-VのNFCタグにNDEWを書き込もうと`writeNDEF`を利用したらエラーが出た。
+Type-VのNFCタグにNDEFを書き込もうと`writeNDEF`を利用したらエラーが出た。
 
 どうやらType-V(iso15693)の場合、書き込む前にCC（Capability Container）領域の初期化が必要で、このあたりはCoreNFCはやってくれないらしいので、フォーマット部分を自前した。
 
