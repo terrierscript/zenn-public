@@ -30,6 +30,7 @@ copilotはデフォルトで`.github/copilot-instructions.md`のファイルは�
 * `github.copilot.chat.reviewSelection.instructions` - コードレビューに対する指示
 * `github.copilot.chat.commitMessageGeneration.instructions` - コミットメッセージの生成に対する指示
 
+またファイルではなくtextで指示を追加するのも出来るっぽい（これも試してない）
 
 # シンボリックリンクを活用する
 
