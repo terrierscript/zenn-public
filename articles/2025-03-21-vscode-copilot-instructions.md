@@ -12,7 +12,7 @@ copilotはデフォルトで`.github/copilot-instructions.md`のファイルは�
 
 ただ、このファイルの中で`foo/bar.md`のように更に別のファイルを参照するような記載をしてもそれらのファイルまでは読み込んではくれないらしく、都合の悪いことが多い。
 
-# copilotに指示を追加する設定
+# VS Codeで設定
 
 [VSCode設定ドキュメント](https://code.visualstudio.com/docs/copilot/copilot-customization)には、下記のような設定を追加できるようになっているのを見つけた。
 
