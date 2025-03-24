@@ -1,6 +1,6 @@
 ---
 title: VSCodeのcopilotに複数のinstructionsファイルを読み込ませる
-emoji: 🦛
+emoji: 🛩️
 type: tech
 topics:
   - vscode
