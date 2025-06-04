@@ -1,5 +1,5 @@
 ---
-title: ブラウザでvector化してQdrantで類似画像検索をやる
+title: クライアント側でvector化してQdrantで類似画像検索する
 emoji: 🏹
 type: tech
 topics:
