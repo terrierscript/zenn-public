@@ -9,7 +9,9 @@ topics:
 published: true
 ---
 
-ブラウザ上で画像をベクトル化し、[Qdrant](https://qdrant.tech/)を使って類似画像検索するやつ。TypeScriptのみ
+ブラウザ上で画像をベクトル化し、[Qdrant](https://qdrant.tech/)を使って類似画像検索するやつ。TypeScriptのみ。
+
+画像のアップロードやベクター化などをクライアント側に任せられるので、嬉しいケースはあるはず
 
 ## Qdrant準備
 
