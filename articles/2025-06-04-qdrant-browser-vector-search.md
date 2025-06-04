@@ -1,5 +1,5 @@
 ---
-title: クライアント側でvector化してQdrantで類似画像検索する
+title: ブラウザ側でvector化してQdrantで類似画像検索する
 emoji: 🏹
 type: tech
 topics:
@@ -9,7 +9,7 @@ topics:
 published: true
 ---
 
-ブラウザ上で画像をベクトル化し、[Qdrant](https://qdrant.tech/)を使って類似画像検索するやつ
+ブラウザ上で画像をベクトル化し、[Qdrant](https://qdrant.tech/)を使って類似画像検索するやつ。TypeScriptのみ
 
 ## Qdrant準備
 
