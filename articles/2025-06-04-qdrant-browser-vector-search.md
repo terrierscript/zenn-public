@@ -251,7 +251,7 @@ export const VectorizePage: FC<VectorizePageProps> = () => {
 
 ## 検索結果
 
-実際に動かした結果はこんな感じ
+実際に動かした結果はこんな感じ。ブラウザから上げるのしんどかったので、バッチ処理で[Dog API Images](https://github.com/jigsawpieces/dog-api-images)の画像を入れて試した。
 
 ![アップロード画面](https://storage.googleapis.com/zenn-user-upload/6aefb9520f08-20250604.png)
 
