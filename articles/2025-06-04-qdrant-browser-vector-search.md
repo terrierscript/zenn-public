@@ -14,6 +14,24 @@ published: true
 画像のアップロードやベクター化などをクライアント側に任せられるので、嬉しいケースはあるはず。
 
 
+## できたもの
+
+実際に動かした結果はこんな感じ。[Dog API Images](https://github.com/jigsawpieces/dog-api-images)の画像を入れて試している
+
+![アップロード画面](https://storage.googleapis.com/zenn-user-upload/6aefb9520f08-20250604.png)
+
+混ぜ込んだ同じ犬の結果が出たり（背景色に引っ張られてそう）、それ以外もわりかし近いものが出てる
+
+![検索結果](https://storage.googleapis.com/zenn-user-upload/66c29bfc02e6-20250604.png)
+
+別の例として、[CC0ライセンスの画像](https://www.flickr.com/photos/157635012@N07/44134376585)を使った検索でもそれっぽい感じになった
+
+![別の検索例](https://storage.googleapis.com/zenn-user-upload/58062230c5fa-20250604.png)
+
+
+
+# やり方
+
 ## Qdrant準備
 
 とりあえず準備としてDockerを使ってQdrantをローカル環境に構築。
@@ -251,19 +269,3 @@ export const VectorizePage: FC<VectorizePageProps> = () => {
 ```
 
 ユーザーが選択した画像をベクトル化して、そのベクトルを使って類似する画像をQdrantから検索している。
-
-## 検索結果
-
-実際に動かした結果はこんな感じ。ブラウザから上げるのしんどかったので、バッチ処理で[Dog API Images](https://github.com/jigsawpieces/dog-api-images)の画像を入れて試した。
-
-![アップロード画面](https://storage.googleapis.com/zenn-user-upload/6aefb9520f08-20250604.png)
-
-混ぜ込んだ同じ犬の結果が出たり（背景色に引っ張られてそう）、それ以外もわりかし近いものが出てる
-
-![検索結果](https://storage.googleapis.com/zenn-user-upload/66c29bfc02e6-20250604.png)
-
-別の例として、[CC0ライセンスの画像](https://www.flickr.com/photos/157635012@N07/44134376585)を使った検索でもそれっぽい感じになった
-
-![別の検索例](https://storage.googleapis.com/zenn-user-upload/58062230c5fa-20250604.png)
-
-たのしい
