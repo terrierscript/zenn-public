@@ -1,5 +1,5 @@
 ---
-title: ブラウザ側でvector化してQdrantで類似画像検索する
+title: ブラウザ側でvector化してサーバレスっぽくQdrantで類似画像検索する
 emoji: 🏹
 type: tech
 topics:
@@ -9,9 +9,10 @@ topics:
 published: true
 ---
 
-ブラウザ上で画像をベクトル化し、[Qdrant](https://qdrant.tech/)を使って類似画像検索するやつ。TypeScriptのみ。
+ブラウザ上で画像をベクトル化し、[Qdrant](https://qdrant.tech/)を使って類似画像検索する。TypeScriptのみでサーバレスっぽい感じの構成（Qdrantがいるのでサーバレスではない）
 
-画像のアップロードやベクター化などをクライアント側に任せられるので、嬉しいケースはあるはず
+画像のアップロードやベクター化などをクライアント側に任せられるので、嬉しいケースはあるはず。
+
 
 ## Qdrant準備
 
