@@ -80,7 +80,7 @@ export const querySample = async () => {
 
 # Bad Request - this can be caused by the S3 region being set incorrectly.
 
-これは暫定回避したが半未解決みたいな問題。
+~~これは暫定回避したが半未解決みたいな問題。~~
 
 httpfsを経由して、S3を指定した場合、下記のようなエラーに見舞われた
 
@@ -88,7 +88,21 @@ httpfsを経由して、S3を指定した場合、下記のようなエラーに
 Bad Request - this can be caused by the S3 region being set incorrectly.
 ```
 
-Provided Regionは想定通りのもので一致していて、色々と設定を確認したが根本原因を見つけられなかった。
-ローカルでは起きていないので、なんらかvercel上の噛み合わせの悪さがありそうに思える。
+~~Provided Regionは想定通りのもので一致していて、色々と設定を確認したが根本原因を見つけられなかった。
+ローカルでは起きていないので、なんらかvercel上の噛み合わせの悪さがありそうに思える。~~
 
-S3でのリクエストではなく、`aws-sdk/s3-request-presigner`で署名付きURLを発行してそれを利用して`read_csv('${presignedUrl}')`のようにしたところ一旦回避できたので今回はこれでよしとした
+~~S3でのリクエストではなく、`aws-sdk/s3-request-presigner`で署名付きURLを発行してそれを利用して`read_csv('${presignedUrl}')`のようにしたところ一旦回避できたので今回はこれでよしとした~~
+
+### 追記: SessionTokenを発行すると解決
+どうやらSessionTokenを発行して設定すれば良いようだった
+
+```sql
+CREATE SECRET my_secret (
+    TYPE s3,
+    KEY_ID 'my_secret_key',
+    SECRET 'my_secret_value',
+    REGION 'my_region',
+    SESSION_TOKEN 'STSで発行したsession token'
+);
+```
+内部的な調査はしていないので理由はちょっと不明
