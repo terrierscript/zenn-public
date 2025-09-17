@@ -1,5 +1,5 @@
 ---
-title: duckdb-wasmでCSVを扱うときに、all_varchar=trueで一旦怠けてから型付けする
+title: duckdb-wasmでCSVを扱うときに、all_varchar=trueで一旦怠けてからそれなりのtype-safeで安寧を得る
 emoji: 🧆
 type: tech
 topics:
