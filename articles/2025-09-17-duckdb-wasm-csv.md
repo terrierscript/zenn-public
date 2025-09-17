@@ -1,5 +1,5 @@
 ---
-title: duckdb-wasmでCSVを扱うときに、all_varchar=trueで一旦怠けてからそれなりのtype-safeで安寧を得る
+title: duckdb-wasmでCSVを扱うときに、それなりのtype-safeで安寧を得る
 emoji: 🧆
 type: tech
 topics:
@@ -10,7 +10,8 @@ published: true
 ---
 
 DuckDB-WASMをブラウザで使ってCSVデータを扱う際、色々と困りごとに当たったので、それをまとめていく。
-今回クエリビルダーやORMでDuckDBで使えそうな適切なものがなかったので、そのあたりナシの生SQLになっている
+
+今回クエリビルダーやORMでDuckDBで使えそうな適切なものがなかったので、そのあたりナシの生SQLで扱いつつ、Zodでそれなりに型もついてる状態をゴールとする
 
 ちなみに今回は[駅データ.jp](https://www.ekidata.jp/)にて配布されているCSVをサンプルに取り扱ったので、サンプルコードもそれに沿った形となっている
 
