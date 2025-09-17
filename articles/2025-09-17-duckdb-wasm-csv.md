@@ -1,5 +1,5 @@
 ---
-title: duckdb-wasmでCSVを扱うときに、それなりのtype-safeで安寧を得る
+title: duckdb-wasmでCSVを扱うときに、それなりのtype-safeで安寧を得るまで
 emoji: 🧆
 type: tech
 topics:
