@@ -1,5 +1,5 @@
 ---
-title: duckdb-wasmでCSVを扱うときに、それなりのtype-safeで安寧を得るまで
+title: duckdb-wasmで扱うCSVにzodでそれなりのtype-safeで安寧を得るまで
 emoji: 🧆
 type: tech
 topics:
@@ -11,11 +11,11 @@ published: true
 
 DuckDB-WASMをブラウザで使ってCSVデータを扱う際、色々と困りごとに当たったので、それをまとめていく。
 
-今回クエリビルダーやORMでDuckDBで使えそうな適切なものがなかったので、そのあたりナシの生SQLで扱いつつ、Zodでそれなりに型もついてる状態をゴールとする
+今回クエリビルダーやORMでDuckDBで使えそうな適切なものがなかったので、そのあたりナシの生SQLで扱いつつ、Zodでそれなりに型もついてる状態をゴールとする。
 
 ちなみに今回は[駅データ.jp](https://www.ekidata.jp/)にて配布されているCSVをサンプルに取り扱ったので、サンプルコードもそれに沿った形となっている
 
-# 1. CSV読み込みは`all_varchar=true`してしまう
+# 1. CSV読み込みは`all_varchar=true`で全部文字列にしてしまう
 
 DuckDBで`read_csv`でCSVを読み込む際、通常はそれぞれのフィールドを読み取って自動で型を決定してくれる
 一見便利そうに見えるが、これを利用した場合
